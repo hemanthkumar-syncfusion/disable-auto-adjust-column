@@ -59,6 +59,8 @@ toggleElement.innerHTML = grid.allowGrouping + '';
 toggleElement.addEventListener('click', toggle);
 function toggle() {
     alert('hi');
+    grid.preventAdjustColumns = !grid.allowGrouping;
+    toggleElement.innerHTML = grid.allowGrouping + '';
     //grid.preventAdjustColumns = !grid.preventAdjustColumns;
     //toggleElement.innerHTML = grid.preventAdjustColumns + '';
 }
