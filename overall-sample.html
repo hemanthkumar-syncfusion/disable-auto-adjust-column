@@ -55,13 +55,11 @@
 grid.appendTo('#Grid');
     
 var toggleElement = document.getElementById('toggle');
-toggleElement.innerHTML = grid.allowGrouping + '';
+toggleElement.innerHTML = grid.preventAdjustColumns + '';
 toggleElement.addEventListener('click', toggle);
 function toggle() {
-    grid.allowGrouping = !grid.allowGrouping;
-    toggleElement.innerHTML = grid.allowGrouping + '';
-    //grid.preventAdjustColumns = !grid.preventAdjustColumns;
-    //toggleElement.innerHTML = grid.preventAdjustColumns + '';
+    grid.preventAdjustColumns = !grid.preventAdjustColumns;
+    toggleElement.innerHTML = grid.preventAdjustColumns + '';
 }
 </script>
 </body></html>
