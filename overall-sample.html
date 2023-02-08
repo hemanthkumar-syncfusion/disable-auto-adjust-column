@@ -27,7 +27,8 @@
   
 </head>
 <body>
-        <div id="Grid"></div>        
+    <button id="toggle">toggle</button>
+    <div id="Grid"></div>        
 
 <script >
     ej.grids.Grid.Inject(ej.grids.Filter, ej.grids.Edit, ej.grids.Toolbar, ej.grids.Sort, ej.grids.Group, ej.grids.ColumnMenu, ej.grids.ColumnChooser, ej.grids.Page);
@@ -52,5 +53,14 @@
         ],
 });
 grid.appendTo('#Grid');
+    
+var toggleElement = document.getElementById('toggle');
+toggleElement.innerHTML = grid.allowGrouping + '';
+toggleElement.addEventListener('click', toggle);
+function toggle() {
+    alert('hi');
+    //grid.preventAdjustColumns = !grid.preventAdjustColumns;
+    //toggleElement.innerHTML = grid.preventAdjustColumns + '';
+}
 </script>
 </body></html>
