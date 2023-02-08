@@ -30,7 +30,7 @@
         <div id="Grid"></div>        
 
 <script >
-    ej.grids.Grid.Inject(ej.grids.Filter, ej.grids.Edit, ej.grids.Toolbar, ej.grids.Sort, ej.grids.Group, ej.grids.ColumnMenu, ej.grids.ColumnChooser);
+    ej.grids.Grid.Inject(ej.grids.Filter, ej.grids.Edit, ej.grids.Toolbar, ej.grids.Sort, ej.grids.Group, ej.grids.ColumnMenu, ej.grids.ColumnChooser, ej.grids.Page);
     
     var grid = new ej.grids.Grid({
         dataSource: filterData,
@@ -39,6 +39,8 @@
         allowFiltering: true,
         editSettings: { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Normal' },
         toolbar: ['Add', 'Edit', 'Delete', 'Update', 'Cancel', 'ColumnChooser'],
+        allowPaging: true,
+        pageSettings: { pageSize: 5 },
         showColumnMenu: true,
         showColumnChooser: true,
         columns: [
