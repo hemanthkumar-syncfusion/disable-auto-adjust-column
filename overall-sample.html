@@ -30,25 +30,23 @@
         <div id="Grid"></div>        
 
 <script >
-    ej.grids.Grid.Inject(ej.grids.Filter, ej.grids.Edit, ej.grids.Toolbar, ej.grids.Sort, ej.grids.Page, ej.grids.Group);
+    ej.grids.Grid.Inject(ej.grids.Filter, ej.grids.Edit, ej.grids.Toolbar, ej.grids.Sort, ej.grids.Group, ej.grids.ColumnMenu, ej.grids.ColumnChooser);
     
     var grid = new ej.grids.Grid({
         dataSource: filterData,
-        allowFiltering: true,
-        editSettings: { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Batch' },
-        toolbar: ['Add', 'Edit', 'Delete', 'Update', 'Cancel'],
-        allowSorting: true,
-        allowMultiSorting: true,
-        allowPaging: true,
-        pageSettings: { pageSize: 5 },
         allowGrouping: true,
+        allowSorting: true,
+        allowFiltering: true,
+        editSettings: { allowEditing: true, allowAdding: true, allowDeleting: true, mode: 'Normal' },
+        toolbar: ['Add', 'Edit', 'Delete', 'Update', 'Cancel', 'ColumnChooser'],
+        showColumnMenu: true,
+        showColumnChooser: true,
         columns: [
-        { field: 'OrderID', headerText: 'Order ID', textAlign: 'Right', width: 100, isPrimaryKey: true },
-        { field: 'CustomerID', headerText: 'Customer ID', width: 120, },
-        { field: 'Freight', headerText: 'Freight', textAlign: 'Right', editType: 'numericedit', width: 120, format: 'C2', allowEditing: false },
-        { field: 'ShipCountry', headerText: 'Ship Country', editType: 'dropdownedit', width: 150 },
-        { field: 'ShipRegion', headerText: 'Ship Region', editType: 'dropdownedit', width: 150, allowEditing: false },
-        { field: 'ShipCity', headerText: 'Ship City', editType: 'dropdownedit', width: 150, allowEditing: false }
+            { field: 'OrderID', headerText: 'Order ID', width: 200, isPrimaryKey: true },
+            { field: 'CustomerID', headerText: 'Customer ID' },
+            { field: 'ShipCountry', headerText: 'Ship Country', width: 200 },
+            { field: 'ShipRegion', headerText: 'Ship Region', width: 150, visible: false },
+            { field: 'ShipCity', headerText: 'Ship City', visible: false }
         ],
 });
 grid.appendTo('#Grid');
